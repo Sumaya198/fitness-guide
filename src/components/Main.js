@@ -16,9 +16,21 @@ function Main() {
             console.log('Error', err)
         })
     }, [])
-    
+
     return (
         <div>
+            {
+                exercise.map(fitness => {
+                    return(
+                        <div key={fitness.id}>
+                            <img src={fitness.male.id}/>
+                            <h1>{fitness.name}</h1>
+                            <p>{fitness.bodyAreas}</p>
+                            <div dangerouslySetInnerHTML={{__html: `${fitness.transcript}`}} />
+                        </div>
+                    )
+                })
+            }
             
         </div>
     )
