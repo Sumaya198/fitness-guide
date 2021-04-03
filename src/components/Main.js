@@ -3,7 +3,8 @@ import axios from 'axios';
 import './Main.css'
 
 function Main() {
-    const [exercise, setExercise] = useState([]);
+    const [ exercise, setExercise ] = useState([]);
+    const [ toggleImage, setToggleImage ] = useState(true)
 
     useEffect(() => {
         axios({
@@ -18,13 +19,29 @@ function Main() {
         })
     }, [])
 
+    function toggleTheme(){
+        setToggleImage(prevImage => !prevImage)
+    }
+
+    const ThemeContext = React.createContext()
+
     return (
         <div>
+            <>
+            <ThemeContext.Provider value={toggleImage}>
+                <button onClick={toggleTheme}>Switch Gender</button>
+
+            </ThemeContext.Provider>
+            </>
             {
                 exercise.map(fitness => {
                     return(
                         <div key={fitness.id} className="card">
-                            <img style={{ width: "100%"}} src={fitness.male.image}/>
+                            {
+                                (toggleImage === true) ?
+                            <img style={{ width: "100%"}} src={fitness.male.image}/>:
+                            <img style={{ width: "100%"}} src={fitness.female.image}/>
+                            }
                             <h1 className="title">{fitness.name}</h1>
                             <p>{fitness.bodyAreas}</p>
                             <div dangerouslySetInnerHTML={{__html: `${fitness.transcript}`}} />
