@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Main.css';
+import ExerciseGrid from './exercise/ExerciseGrid';
+//import { FlexGrid } from './Styled';
+//import './Main.css';
+
 
 function Main() {
     const [ exercise, setExercise ] = useState([]);
@@ -19,38 +22,51 @@ function Main() {
         })
     }, [])
 
+   
+    
+
     function toggleTheme(){
         setToggleImage(prevImage => !prevImage)
     }
 
     const ThemeContext = React.createContext()
 
+  
+const renderResults = () =>{
+    if (exercise.length > 0){
+        return (
+            exercise.map(fitness => {
+                <ExerciseGrid data={fitness}/>
+            })
+        )
+        
+    }
+}
+   
+
     return (
-        <div>
+        <>
             <>
             <ThemeContext.Provider value={toggleImage}>
                 <button onClick={toggleTheme}>Switch Gender</button>
 
             </ThemeContext.Provider>
             </>
-            {
-                exercise.map(fitness => {
+            
+            {  exercise.map(fitness => {
+                    
                     return(
-                        <div key={fitness.id} className="card">
-                            {
-                                (toggleImage === true) ?
-                            <img style={{ width: "100%"}} src={fitness.male.image}/>:
-                            <img style={{ width: "100%"}} src={fitness.female.image}/>
-                            }
-                            <h1 className="title">{fitness.name}</h1>
-                            <p>{fitness.bodyAreas}</p>
-                            <div dangerouslySetInnerHTML={{__html: `${fitness.transcript}`}} />
-                        </div>
+                            <ExerciseGrid data={fitness}/>
+                        
                     )
                 })
+            
             }    
-        </div>
+        </>
+
     )
 }
 
 export default Main
+
+
