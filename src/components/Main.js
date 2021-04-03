@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ExerciseGrid from './exercise/ExerciseGrid';
+
 //import { FlexGrid } from './Styled';
 //import './Main.css';
 
@@ -37,9 +38,14 @@ function Main() {
     return (
         
             <>
+            
+            
+            <div>
             <ThemeContext.Provider value={toggleImage}>
-                <button onClick={toggleTheme}>Switch Gender</button>
+                <button style={{color: 'red'}} onClick={toggleTheme}>Switch Gender</button>
             </ThemeContext.Provider>
+            </div>
+            
              
             
             {  exercise.map(fitness => {
