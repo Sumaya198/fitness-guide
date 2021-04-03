@@ -8,6 +8,7 @@ import ExerciseGrid from './exercise/ExerciseGrid';
 function Main() {
     const [ exercise, setExercise ] = useState([]);
     const [ toggleImage, setToggleImage ] = useState(true)
+   
 
     useEffect(() => {
         axios({
@@ -31,32 +32,24 @@ function Main() {
 
     const ThemeContext = React.createContext()
 
-  
-const renderResults = () =>{
-    if (exercise.length > 0){
-        return (
-            exercise.map(fitness => {
-                <ExerciseGrid data={fitness}/>
-            })
-        )
-        
-    }
-}
    
 
     return (
-        <>
+        
             <>
             <ThemeContext.Provider value={toggleImage}>
                 <button onClick={toggleTheme}>Switch Gender</button>
-
             </ThemeContext.Provider>
-            </>
+             
             
             {  exercise.map(fitness => {
+
+                 
+             
                     
                     return(
-                            <ExerciseGrid data={fitness}/>
+                       
+                            <ExerciseGrid data={fitness} toggle={toggleImage}/>
                         
                     )
                 })
@@ -67,6 +60,7 @@ const renderResults = () =>{
     )
 }
 
-export default Main
+export default Main;
+
 
 

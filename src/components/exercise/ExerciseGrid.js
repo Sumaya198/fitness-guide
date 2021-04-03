@@ -1,12 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { FlexGrid } from '../Styled'
 import ExerciseCard from './ExerciseCard'
 
-const ExerciseGrid = ({ data }) => {
+const ExerciseGrid = ({ data , toggle}) => {
+    
     return (
-        
-        <>
-        
+       
            <FlexGrid>
             {
                 <ExerciseCard 
@@ -14,13 +13,10 @@ const ExerciseGrid = ({ data }) => {
                 id={data.id} 
                 name={data.name} 
                 bodyArea={data.bodyArea} 
-                image={data.female.image}
+                image={toggle? data.female.image : data.male.image}
                 transcript={data.transcript}/>
             }
             </FlexGrid>
-            
-        </>
-        
     )
 }
 
