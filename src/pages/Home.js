@@ -1,11 +1,12 @@
 import React from 'react'
-import Main from '../components/Main'
+//import Main from '../components/Main'
 
 const Home = () => {
   
     return(
-        <>    
-    <Main/> 
+        <>  
+        <h1>Mainec</h1>  
+   
         </>        
     )
    
