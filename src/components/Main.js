@@ -8,11 +8,13 @@ import Api from './utils/API';
 function Main() {
     const [ exercise, setExercise ] = useState([]);
     const [ toggleImage, setToggleImage ] = useState(true)
+    const [ isLoading, setIsLoading ] = useState(true)
     
     useEffect(() => {
         Api.getExercise('/').then(res => {
             console.log('the response', res)
             setExercise(res.data.exercises)
+            setIsLoading(false)
         })
         .catch(err => {
             console.log('Error', err)
@@ -25,6 +27,9 @@ function Main() {
 
     const ThemeContext = React.createContext()
 
+    if(isLoading){
+        return <div>Data is being loaded</div>
+    }
    
 
     return (
