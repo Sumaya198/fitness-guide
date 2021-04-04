@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 //import { SearchCard } from '../Styled';
 import { StyledExerciseCard } from "./ExerciseCard.styled";
+import  Modal from "react-modal";
 
-const ExerciseCard = ({ id, name, bodyArea, image, transcript }) => {
+const ExerciseCard = ({ key, id, name, bodyArea, image, transcript }) => {
+   
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   const transcriptAsText = transcript
-    ? `${transcript.split(" ").slice(0, 10).join(" ").replace(/<.+?>/g, "")}...`
+    ? `${transcript.replace(/<.+?>/g, "")}...`
     : "No description";
 
   return (
@@ -21,10 +25,18 @@ const ExerciseCard = ({ id, name, bodyArea, image, transcript }) => {
       <div>
         <h1>{name}</h1>
         <p>{bodyArea}</p>
-        <p>{transcriptAsText}</p>
+        
       </div>
       <div className="btns">
-        <Link to={`/show/${id}`}>Read more</Link>
+        
+       <Link onClick={()=> setModalIsOpen(true)}>Instructions</Link>
+        <Modal isOpen={modalIsOpen}>
+          <h2>{name}</h2>
+          <p>{transcriptAsText}</p>
+          <div>
+            <button onClick={() => setModalIsOpen(false)}>Close</button>
+          </div>
+        </Modal>
         <button type="button">
           Star me
         </button>

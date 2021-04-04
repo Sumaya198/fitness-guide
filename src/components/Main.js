@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ExerciseGrid from './exercise/ExerciseGrid';
+import Api from './utils/API';
 
-//import { FlexGrid } from './Styled';
-//import './Main.css';
 
 
 function Main() {
     const [ exercise, setExercise ] = useState([]);
     const [ toggleImage, setToggleImage ] = useState(true)
-   
-
+    
     useEffect(() => {
-        axios({
-            methos: 'GET',
-            url:`https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/` 
-        }).then(res => {
+        Api.getExercise('/').then(res => {
             console.log('the response', res)
             setExercise(res.data.exercises)
         })
@@ -23,9 +18,6 @@ function Main() {
             console.log('Error', err)
         })
     }, [])
-
-   
-    
 
     function toggleTheme(){
         setToggleImage(prevImage => !prevImage)
@@ -54,8 +46,10 @@ function Main() {
              
                     
                     return(
+                        <>
                        
                             <ExerciseGrid data={fitness} toggle={toggleImage}/>
+                            </>
                         
                     )
                 })
