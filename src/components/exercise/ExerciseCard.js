@@ -8,9 +8,6 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
    
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const transcriptAsText = transcript
-    ? `${transcript.replace(/<.+?>/g, "")}...`
-    : "No description";
 
   return (
     <StyledExerciseCard>
@@ -34,7 +31,8 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
           <h2>{name}</h2>
           <h4>{bodyAreaOne}</h4>
           <h4>{bodyAreaTwo}</h4>
-          <p>{transcriptAsText}</p>
+          <div dangerouslySetInnerHTML={{ __html: transcript}}/>
+         
           <div>
             <button style={{color: 'red'}} onClick={() => setModalIsOpen(false)}>Close</button>
           </div>
