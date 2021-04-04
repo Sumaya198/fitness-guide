@@ -15,7 +15,8 @@ const ExerciseGrid = ({ data , toggle}) => {
                 key={data.id} 
                 id={data.id} 
                 name={data.name} 
-                bodyArea={data.bodyArea} 
+                bodyAreaOne={data.bodyAreas[0]} 
+                bodyAreaTwo={data.bodyAreas[1]} 
                 image={toggle? data.female.image : data.male.image}
                 transcript={data.transcript}/>
             }
