@@ -5,9 +5,9 @@ import {SearchCard} from '../Styled';
 export const StyledExerciseCard = styled(SearchCard)`
  
  .btns{
-     margin-top: 15px;
+     margin-top: 35px;
      display: flex;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
      a {
          text-decoration-color: #000;

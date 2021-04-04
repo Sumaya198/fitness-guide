@@ -8,6 +8,18 @@ export const FlexGrid = styled.div`
    margin-left: 50px;
 `;
 
+export const CardWrapper = styled.div`
+   .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: auto;
+    padding: 10px;
+    height: 520px;
+    text-align: center;
+    display: inline-flex;
+    }
+`;
+
 export const SearchCard = styled.div`
    width: 300px;
    height: 100%auto;
@@ -15,14 +27,14 @@ export const SearchCard = styled.div`
 
    .img-wrapper{
        width: 100%;
-       border-radius: 40px;
-       height: 400px;
+       border-radius: 30px;
+       height: 350px;
        overflow: hidden;
        border: 1px solid #ddd;
 
        img {
-           object-fit: cover;
-           height: 100%;
+           
+           height: 80%;
            width: 100%;
        }
 

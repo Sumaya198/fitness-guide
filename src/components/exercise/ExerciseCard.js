@@ -3,14 +3,19 @@ import React, { useContext, useState } from "react";
 //import { SearchCard } from '../Styled';
 import { StyledExerciseCard } from "./ExerciseCard.styled";
 import  Modal from "react-modal";
+import { CardWrapper } from "../Styled";
 
 const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcript }) => {
    
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
 
+  
+
   return (
+    <CardWrapper>
     <StyledExerciseCard>
+      <div className="card">
       <div>
         <img
           className="img-wrapper"
@@ -38,7 +43,9 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
           </div>
         </Modal>
       </div>
+      </div>
     </StyledExerciseCard>
+    </CardWrapper>
   );
 };
 
