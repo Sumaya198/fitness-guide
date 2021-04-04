@@ -9,10 +9,6 @@ const LINKS = [
     {
         to: '/exercise',
         text: 'Exercise'
-    },
-    {
-        to: '/starred',
-        text: 'Starred'
     }
 ]
 
