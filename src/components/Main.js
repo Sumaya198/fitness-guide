@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ExerciseGrid from './exercise/ExerciseGrid';
 import Api from './utils/API';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 
@@ -28,9 +31,10 @@ function Main() {
     const ThemeContext = React.createContext()
 
     if(isLoading){
-        return <div>Data is being loaded</div>
+        return <CircularProgress/>
     }
    
+    
 
     return (
         
@@ -38,9 +42,11 @@ function Main() {
             
             
             <div>
+          
             <ThemeContext.Provider value={toggleImage}>
-                <button style={{color: 'red'}} onClick={toggleTheme}>Switch Gender</button>
+                <button style={{color: 'red', margin: '40px', justifyContent: 'center', alignItems: 'center', display: 'flex', outline: 'none'}} onClick={toggleTheme}>Switch Gender</button>
             </ThemeContext.Provider>
+            
             </div>
             
              

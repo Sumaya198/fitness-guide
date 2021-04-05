@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import {SearchCard} from '../Styled';
 
 export const StyledExerciseCard = styled(SearchCard)`

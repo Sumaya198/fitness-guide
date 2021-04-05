@@ -10,8 +10,6 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
 
-  
-
   return (
     <CardWrapper>
     <StyledExerciseCard>
@@ -38,8 +36,8 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
           <h4>{bodyAreaTwo}</h4>
           <div dangerouslySetInnerHTML={{ __html: transcript}}/>
          
-          <div>
-            <button style={{color: 'red'}} onClick={() => setModalIsOpen(false)}>Close</button>
+          <div className="btns">
+            <button onClick={() => setModalIsOpen(false)}>Close</button>
           </div>
         </Modal>
       </div>

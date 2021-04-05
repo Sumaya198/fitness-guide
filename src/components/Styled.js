@@ -46,3 +46,14 @@ export const SearchCard = styled.div`
    }
 
 `;
+
+export const HomeGrid = styled.div`
+     .background{
+     background-image: url('https://images.pexels.com/photos/3076510/pexels-photo-3076510.jpeg?cs=srgb&dl=pexels-jonathan-borba-3076510.jpg&fm=jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     height: 100vh;
+     width: 100vw;
+}
+
+`;
