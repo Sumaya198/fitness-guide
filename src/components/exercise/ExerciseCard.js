@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 //import { SearchCard } from '../Styled';
 import { StyledExerciseCard } from "./ExerciseCard.styled";
 import  Modal from "react-modal";
-import { CardWrapper } from "../Styled";
+import { CardWrapper, Button, Background, ModalWrapper, ModalContent, CloseModalButton, } from "../Styled";
 
 const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcript }) => {
    
@@ -27,18 +27,24 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
        
         
       </div>
-      <div className="btns">
+      <div>
         
-       <button onClick={()=> setModalIsOpen(true)}>Instructions</button>
+       <Button onClick={()=> setModalIsOpen(true)}>Instructions</Button>
         <Modal isOpen={modalIsOpen}>
-          <h2>{name}</h2>
-          <h4>{bodyAreaOne}</h4>
-          <h4>{bodyAreaTwo}</h4>
+        <ModalWrapper>
+        <ModalContent>
+          <h2 className="title">{name}</h2>
+          <h4 className="subtitle">{bodyAreaOne} & {bodyAreaTwo}</h4>
+          
           <div dangerouslySetInnerHTML={{ __html: transcript}}/>
+          
          
-          <div className="btns">
-            <button onClick={() => setModalIsOpen(false)}>Close</button>
-          </div>
+          
+            <Button onClick={() => setModalIsOpen(false)}>Close</Button>
+          
+          </ModalContent>
+          </ModalWrapper>
+          
         </Modal>
       </div>
       </div>

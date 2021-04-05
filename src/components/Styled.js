@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MdClose } from 'react-icons/md';
 
 export const FlexGrid = styled.div`
    display: inline-flex;
@@ -17,6 +18,7 @@ export const CardWrapper = styled.div`
     height: 520px;
     text-align: center;
     display: inline-flex;
+    border-radius: 40px;
     }
 `;
 
@@ -55,4 +57,51 @@ export const HomeGrid = styled.div`
      height: 100vh;
      width: 100vw;
 }
+`;
+
+export const Button = styled.button`
+background: #2400ff;
+border-radius: 3px;
+border: none;
+color: white;
+`;
+
+//modal styles
+export const ModalWrapper = styled.div`
+  width: auto;
+  height: auto;
+  padding: 20px 20px;
+  margin: 50px;
+ 
+  display: flex;
+
+  position: absolute;
+  
+  
+  
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.8;
+  color:#000;
+  p {
+    margin-bottom: 1rem;
+  }
+  button {
+    padding: 10px 24px;
+    background: #2400ff;
+    color: #fff;
+    border: none;
+  }
+  .title{
+    padding: 30px;
+    font-size: 40px;
+  }
+  .subtitle{
+      padding: 20px;
+      
+  }
 `;

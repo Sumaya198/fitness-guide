@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ExerciseGrid from './exercise/ExerciseGrid';
 import Api from './utils/API';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Button } from './Styled';
 
 
 
@@ -44,7 +43,7 @@ function Main() {
             <div>
           
             <ThemeContext.Provider value={toggleImage}>
-                <button style={{color: 'red', margin: '40px', justifyContent: 'center', alignItems: 'center', display: 'flex', outline: 'none'}} onClick={toggleTheme}>Switch Gender</button>
+                <Button onClick={toggleTheme}>Switch Gender</Button>
             </ThemeContext.Provider>
             
             </div>
