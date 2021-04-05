@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 
 const theme = {
   mainColors: {
-    blue: '#2400ff',
+    blue: '#009FE3',
     gray: '#c6c6c6',
     dark: '#353535',
   }

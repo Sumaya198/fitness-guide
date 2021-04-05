@@ -56,11 +56,11 @@ export const HomeGrid = styled.div`
          position: relative;
          background-image: url(${img});
          background-repeat: no-repeat;
-         min-height: 80vh;
-         background-position: right;
-         
+         min-height: 100vh;
+         background-position: center;
+         width: 50%;
          display:flex;
-         width: 100%;
+        
          
          justify-content: flex-start;
          display: flex;
@@ -90,10 +90,10 @@ export const HomePageContent = styled.div`
 `;
 
 export const Button = styled.button`
-background: #2400ff;
-border-radius: 3px;
-border: none;
-color: white;
+padding: 10px 24px;
+    background:#009FE3;
+    color: #fff;
+    border: none;
 .genderButton{
     margin: 60px;
 }
@@ -140,7 +140,7 @@ export const ModalContent = styled.div`
   }
   button {
     padding: 10px 24px;
-    background: #2400ff;
+    background:#009FE3;
     color: #fff;
     border: none;
   }
@@ -189,12 +189,37 @@ export const HomeCardWrapper = styled.div`
        border-radius: 20px;
    }
    .box:nth-child(1){
-       background: linear-gradient(45deg,#036eb7,#64eaff);
+       background: linear-gradient(45deg,#036eb7, #64eaff);
    }
    .box:nth-child(2){
-       background: linear-gradient(45deg,#036eb7,#64eaff);
+       background: linear-gradient(45deg,#E91E63, #ed55ff);
    }
    .box:nth-child(3){
-       background: linear-gradient(45deg,#036eb7,#64eaff);
+       background: linear-gradient(45deg,#086d35, #00ff72);
+   }
+
+   .box h2 {
+       position: relative;
+       margin: 0;
+       padding: 0;
+       font-size: 100px;
+       color: #fff;
+       z-index: 1;
+       opacity: 0.4;
+   }
+
+   .box h3 {
+       margin: 0;
+       padding: 0;
+       color: #fff;
+       font-size: 24px;
+       text-transform: uppercase;
+   }
+
+   .box p {
+       margin: 0;
+       padding: 0;
+       color: #fff;
+       font-size: 18px;
    }
 `;

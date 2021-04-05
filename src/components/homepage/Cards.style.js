@@ -15,12 +15,12 @@ const Cards = () => {
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
                </div>
                <div className="box">
-                   <h2>1</h2>
+                   <h2>2</h2>
                    <h3>First</h3>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
                </div>
                <div className="box">
-                   <h2>1</h2>
+                   <h2>3</h2>
                    <h3>First</h3>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
                </div>
