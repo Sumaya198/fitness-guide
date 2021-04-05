@@ -94,6 +94,7 @@ padding: 10px 24px;
     background:#009FE3;
     color: #fff;
     border: none;
+    border-radius: 10px;
 .genderButton{
     margin: 60px;
 }
@@ -154,7 +155,7 @@ export const ModalContent = styled.div`
   }
   .target-areas{
       text-transform: uppercase;
-      color: #2400ff;
+      color: #009FE3;
       font-weight: 800;
   }
 `;

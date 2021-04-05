@@ -1,8 +1,8 @@
 import React from 'react'
-import { HomeGrid, HomePageContent, Button } from '../Styled';
+import { Button } from '../Styled';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { Marginer } from '../Margina';
+//import styled from 'styled-components';
+//import { Marginer } from '../Margina';
 import img from '../bggg-01.png'
 
 /*const TopContainer = styled.div`
@@ -53,9 +53,10 @@ const HomePage = () => {
   <div className="row">
   <div className="col-lg-6 mt-5 mt-lg-0" style={{padding: '50px'}}>
       <h2 style={{fontSize: '80px', fontFamily: 'Abril Fatface'}}>Get <span style={{color: '#009FE3'}}>fit</span></h2>
-      
-      <p style={{fontSize: '18px', lineHeight: '32px', fontStyle: 'italic'}}>Exercise not only changes your body. It changes your mind, your attitude and mood</p>
-      <p style={{fontSize: '18px', lineHeight: '32px', fontStyle: 'italic'}}>Explore a range of exercises by clicking on the button below. Enjoy</p>
+      <div style={{ fontFamily: 'Raleway', fontWeight: '700'}}>
+      <p style={{fontSize: '18px', lineHeight: '32px' }}>Exercise not only changes your body. It changes your mind, your attitude and mood</p>
+      <p style={{fontSize: '18px', lineHeight: '32px'}}>Whether you are starting your fitness journey or a pro athlete we got you covered. Explore our wide range of workouts. <span style={{fontWeight: '800'}}>Start today! Enjoy!</span></p>
+      </div>
       <div>
       <Link to="/exercise"><Button type="button">Get Started</Button></Link>
       </div>

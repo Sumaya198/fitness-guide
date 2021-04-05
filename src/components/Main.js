@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ExerciseGrid from './exercise/ExerciseGrid';
 import Api from './utils/API';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button, FlexGrid } from './Styled';
+import { Button } from './Styled';
 
 
 
@@ -58,7 +58,7 @@ function Main() {
                     return(
                         <>
                        
-                            <ExerciseGrid data={fitness} toggle={toggleImage}/>
+                            <ExerciseGrid key={fitness} data={fitness} toggle={toggleImage}/>
                             </>
                         
                     )

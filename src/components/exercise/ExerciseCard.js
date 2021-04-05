@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 //import { Link } from "react-router-dom";
 //import { SearchCard } from '../Styled';
 import { StyledExerciseCard } from "./ExerciseCard.styled";
 import  Modal from "react-modal";
 import { CardWrapper, Button, ModalWrapper, ModalContent } from "../Styled";
 
-const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcript }) => {
+const ExerciseCard = ({ id, name, bodyAreaOne, bodyAreaTwo, image, transcript }) => {
    
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -14,7 +14,7 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
     <CardWrapper>
     <StyledExerciseCard>
       <div className="card">
-      <div>
+      <div >
         <img
           className="img-wrapper"
           style={{ width: "300px" }}
@@ -25,9 +25,11 @@ const ExerciseCard = ({ key, id, name, bodyAreaOne, bodyAreaTwo, image, transcri
       <div>
         <h1>{name}</h1>       
       </div>
-      <div>       
+      <div style={{marginTop: '35px'}}>       
        <Button onClick={()=> setModalIsOpen(true)}>Instructions</Button>
-        <Modal isOpen={modalIsOpen}>
+        <Modal isOpen={modalIsOpen}
+        ariaHideApp={false}>
+          
         <ModalWrapper>
         <ModalContent>     
           <h2 className="title">{name}</h2>  
