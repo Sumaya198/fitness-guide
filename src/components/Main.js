@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ExerciseGrid from './exercise/ExerciseGrid';
+import ExerciseCard from './exercise/ExerciseCard';
 import Api from './utils/API';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Button } from './Styled';
@@ -58,7 +58,7 @@ function Main() {
                     return(
                         <>
                        
-                            <ExerciseGrid key={fitness} data={fitness} toggle={toggleImage}/>
+                            <ExerciseCard key={fitness} data={fitness} toggle={toggleImage}/>
                             </>
                         
                     )
