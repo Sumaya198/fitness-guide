@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { MdClose } from 'react-icons/md';
+
+import img from './bggg-01.png'
+
 
 export const FlexGrid = styled.div`
    display: inline-flex;
@@ -51,12 +53,40 @@ export const SearchCard = styled.div`
 
 export const HomeGrid = styled.div`
      .background{
-     background-image: url('https://images.pexels.com/photos/3076510/pexels-photo-3076510.jpeg?cs=srgb&dl=pexels-jonathan-borba-3076510.jpg&fm=jpg');
-     background-size: cover;
-     background-repeat: no-repeat;
-     height: 100vh;
-     width: 100vw;
+         position: relative;
+         background-image: url(${img});
+         background-repeat: no-repeat;
+         min-height: 80vh;
+         background-position: right;
+         
+         display:flex;
+         width: 100%;
+         
+         justify-content: flex-start;
+         display: flex;
+         align-items: center;
 }
+ .content{
+     justify-content: flex-start;
+     display: flex;
+     padding: 100px;
+     max-width: 600px;
+ }
+ .contentBx h2{
+     font-size: 3em;
+     color: #000;
+     line-height: 1em;
+ }
+ .contentBx p{
+     font-size: 1.1em;
+     color: #000;
+     font-weight: 300;
+ }
+`;
+
+export const HomePageContent = styled.div`
+
+
 `;
 
 export const Button = styled.button`
@@ -64,6 +94,9 @@ background: #2400ff;
 border-radius: 3px;
 border: none;
 color: white;
+.genderButton{
+    margin: 60px;
+}
 `;
 
 //modal styles
@@ -76,7 +109,22 @@ export const ModalWrapper = styled.div`
   display: flex;
 
   position: absolute;
-  
+  .containery{
+  height:100%;
+  width:100%;
+  font-size:0;
+  margin:0 auto;
+}
+  .item{
+  display: flex;
+  vertical-align:top;
+  background:#00BF1D;
+  height:100%;
+  width:80%;
+}
+.item:nth-child(2){
+  background:#F4CAAE;
+}
   
   
 `;
@@ -101,7 +149,52 @@ export const ModalContent = styled.div`
     font-size: 40px;
   }
   .subtitle{
-      padding: 20px;
-      
+      margin-bottom: 30px;
+      font-size: 35px; 
   }
+  .target-areas{
+      text-transform: uppercase;
+      color: #2400ff;
+      font-weight: 800;
+  }
+`;
+
+/// About Cards
+export const HomeCardWrapper = styled.div`
+   body{
+       margin: 0;
+       padding: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+   }
+   
+   .container{
+       width: 1200px;
+       height: auto;
+       margin: 0 auto;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       grid-gap: 10px;
+       padding: 10px;
+       box-sizing: border-box;
+   }
+   .box{
+       position: relative;
+       background: yellow;
+       padding: 20px 40px 40px;
+       text-align: center;
+       overflow: hidden;
+       border-radius: 20px;
+   }
+   .box:nth-child(1){
+       background: linear-gradient(45deg,#036eb7,#64eaff);
+   }
+   .box:nth-child(2){
+       background: linear-gradient(45deg,#036eb7,#64eaff);
+   }
+   .box:nth-child(3){
+       background: linear-gradient(45deg,#036eb7,#64eaff);
+   }
 `;

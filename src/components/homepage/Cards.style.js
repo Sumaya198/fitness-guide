@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardWrapper, FlexGrid } from '../Styled';
+import { HomeCardWrapper } from '../Styled';
 
 
 const Cards = () => {
@@ -7,18 +7,27 @@ const Cards = () => {
    
     
     return (
-       
-           <FlexGrid>
-               <CardWrapper>
-                   <h1 className="card">hi</h1>
-            </CardWrapper>
-            <CardWrapper>
-            <h1 className="card">hi</h1>
-     </CardWrapper>
-     <CardWrapper>
-     <h1 className="card">hi</h1>
-</CardWrapper>
-</FlexGrid>
+        <HomeCardWrapper>
+           <div className="container">
+               <div className="box">
+                   <h2>1</h2>
+                   <h3>First</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
+               </div>
+               <div className="box">
+                   <h2>1</h2>
+                   <h3>First</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
+               </div>
+               <div className="box">
+                   <h2>1</h2>
+                   <h3>First</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, at.</p>
+               </div>
+           </div>
+           
+           </HomeCardWrapper>
+           
             
     )
 }

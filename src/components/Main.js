@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ExerciseGrid from './exercise/ExerciseGrid';
 import Api from './utils/API';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button } from './Styled';
+import { Button, FlexGrid } from './Styled';
 
 
 
@@ -40,10 +40,10 @@ function Main() {
             <>
             
             
-            <div>
+            <div style={{marginLeft: '50px', marginBottom: '70px'}}>
           
             <ThemeContext.Provider value={toggleImage}>
-                <Button onClick={toggleTheme}>Switch Gender</Button>
+                <Button onClick={toggleTheme}>{toggleImage? "Switch to Male" : "Switch to Female"}</Button>
             </ThemeContext.Provider>
             
             </div>
