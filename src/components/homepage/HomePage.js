@@ -40,7 +40,7 @@ const HomePage = () => {
       delay: .8
     }, .15, 'Start')
       .from(contentP, 1, { y: 20, opacity: 0, ease: Power3.easeOut }, 1.4)
-
+      
   }, [tl])
 
   return (
