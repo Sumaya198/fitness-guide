@@ -17,3 +17,4 @@ The key aspects of the app are:
 ![screenshot cover page](src/components/images/screenshotTwo.png)
 
 ![screenshot fitness page](src/components/images/screenshotOne.png)
+![screenshot instructions page](src/components/images/screenshotThree.png)
