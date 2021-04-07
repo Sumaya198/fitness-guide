@@ -3,7 +3,6 @@ import Background from '../images/background-2-01.jpg'
 
 
 export const Wrapper = styled.div`
-
 display: grid;
     height: 100vh;
     grid-template-columns: repeat(4, 1fr);
@@ -29,7 +28,7 @@ display: grid;
 }
 `;
 
-export const Header = styled.div `
+export const Header = styled.div`
 grid-area: main;
 margin-top: 100px;
 `;
@@ -47,9 +46,7 @@ export const HeroContentLine = styled.div`
   height: 44px;
 
   @media screen and (min-width: 1210px) {
-
     margin-right: 80px;
-
     .background-img{
     display: flex;
   }

@@ -47,7 +47,6 @@ export const ExerciseCardStyle = styled.div`
 `;
 
 
-
 export const Button = styled.button`
 padding: 10px 14px;
     background:#009FE3;
