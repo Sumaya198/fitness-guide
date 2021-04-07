@@ -14,6 +14,8 @@ The key aspects of the app are:
 
 # Link to Application
 
+[View application](https://fitness-guide.herokuapp.com)
+
 ![screenshot cover page](src/components/images/screenshotTwo.png)
 
 ![screenshot fitness page](src/components/images/screenshotOne.png)
