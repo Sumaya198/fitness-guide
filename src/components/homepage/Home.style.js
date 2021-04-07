@@ -38,7 +38,7 @@ export const ImgSection = styled.div`
 grid-area: next;
 @media only screen and (max-width: 871px)
 {
-  width: 300px;
+  display: none;
 }
 `;
 
