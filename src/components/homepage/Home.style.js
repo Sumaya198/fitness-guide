@@ -365,7 +365,6 @@ export const HeroContentLine = styled.div`
   }
   }
 
-
 `;
 
 export const CardText = styled.div`
