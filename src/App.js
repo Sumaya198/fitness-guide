@@ -2,7 +2,7 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navigation/NavBar';
 import ExerciseGuide from './pages/ExerciseGuide';
 
 import { ThemeProvider } from 'styled-components';

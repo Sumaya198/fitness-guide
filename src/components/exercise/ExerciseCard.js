@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { StyledExerciseCard } from "./ExerciseCard.styled";
 import  Modal from "react-modal";
 import { CardWrapper, Button, ModalWrapper, ModalContent, FlexGrid } from "../Styled";
-import GymSharkLogo from '../GymSharkLogo-01.png'
+import GymSharkLogo from '../images/GymSharkLogo-01.png'
 
 const ExerciseCard = ({ data , toggle}) => {
    
@@ -54,47 +54,3 @@ const ExerciseCard = ({ data , toggle}) => {
 };
 
 export default ExerciseCard;
-
-/* const ExerciseCard = ({ id, name, bodyAreaOne, bodyAreaTwo, image, transcript }) => {
-   
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-
-
-  return (
-    <CardWrapper>
-    <StyledExerciseCard>
-      <div className="card">
-      <div >
-        <img
-          className="img-wrapper"
-          style={{ width: "300px" }}
-          src={image}
-          alt="exercise posture"
-        />
-      </div>
-      <div>
-        <h1>{name}</h1>       
-      </div>
-      <div style={{marginTop: '35px'}}>       
-       <Button onClick={()=> setModalIsOpen(true)}>Instructions</Button>
-        <Modal isOpen={modalIsOpen}
-        ariaHideApp={false}>
-          
-        <ModalWrapper>
-        <ModalContent>     
-          <h2 className="title">{name}</h2>  
-          <p className="target-areas">Target body areas:</p>
-          <h4 className="subtitle">{bodyAreaOne} & {bodyAreaTwo}</h4>
-          <div dangerouslySetInnerHTML={{ __html: transcript}}/>
-            <Button onClick={() => setModalIsOpen(false)}>Close</Button>
-            
-          </ModalContent>
-          </ModalWrapper>
-          
-        </Modal>
-      </div>
-      </div>
-    </StyledExerciseCard>
-    </CardWrapper>
-  );
-}; */
