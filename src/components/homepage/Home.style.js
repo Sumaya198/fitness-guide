@@ -401,7 +401,7 @@ font-size: 16px;
 line-height: 27px;
 font-weight: 300;
 padding-right: 18px;
-margin-bottom: 56px;
+margin-bottom: 6px;
 
 `;
 
@@ -414,6 +414,14 @@ export const Footer = styled.div`
  background:#000;
 `;
 
+export const Icon = styled.div`
+font-size: 30px;
+color: blue;
+display: flex;
+padding:10px;
+line-height: 40px;
+margin: 0 6px 0;
+`;
 
 
 

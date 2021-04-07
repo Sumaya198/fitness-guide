@@ -3,8 +3,9 @@ import {TweenMax, TimelineLite, Power3} from 'gsap';
 import { Button} from '../Styled';
 import { Link } from 'react-router-dom';
 import GymSharkLogo from '../GymSharkLogo-01.png'
-import GymMaleImg from '../image1Male-01.webp'
-import {Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text } from './Home.style';
+import GymMaleImg from '../image1Male-01.webp';
+import { FaInstagram, FaTwitter } from "react-icons/fa";
+import {Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text, Icon} from './Home.style';
 
 
 
@@ -24,7 +25,6 @@ const HomePage = () => {
   const headlineFirst = content
   
   const contentP = text
-
 
   TweenMax.from(content, .8, {opacity: 0, x:40, ease: Power3.easeOut})
   
@@ -51,17 +51,22 @@ const HomePage = () => {
       <LogoImg src={GymSharkLogo} alt="gymshark logo"/>
     <HeroContentInner>
    <h1>
-               <div className="hero-content-line-inner">GET <span style={{color: '#009FE3'}}>FIT</span></div>
+               <div>GET <span style={{color: '#009FE3'}}>FIT</span></div>
                
-               <div className="hero-content-line-inner">With GymShark</div>  
+               <div>With GymShark</div>  
             
            </h1>
            <div ref={el => text = el}>
            <Text ref={el => text = el}>
-             Each new day is a neropportunity to improve yourself. Take It. And make the most of it.
+             Each new day is a new opportunity to improve yourself. Take It. And make the most of it.
 
              Explore our wide range of exercises
              </Text>
+             <Icon>
+              <div><a href="https://www.instagram.com/gymshark/"><FaInstagram/></a></div>
+              <div><a href="https://twitter.com/Gymshark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><FaTwitter/></a></div>
+              </Icon>
+            
              
            <Link to="/exercise"><Button>Get Started</Button></Link>
            </div>
@@ -69,7 +74,7 @@ const HomePage = () => {
            </Header>
 
     <ImgSection ref={el => images = el}>
-        <img src={GymMaleImg}/>
+        <img src={GymMaleImg} alt="lifting-club-model"/>
       </ImgSection>
 
 </Wrapper>

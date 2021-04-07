@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {SearchCard} from '../Styled';
+import {ExerciseCardStyle} from '../Styled';
 
-export const StyledExerciseCard = styled(SearchCard)`
+export const StyledExerciseCard = styled(ExerciseCardStyle)`
  
  .btns{
      margin-top: 5px;

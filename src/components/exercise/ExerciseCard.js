@@ -26,7 +26,7 @@ const ExerciseCard = ({ data , toggle}) => {
       </div>
       <div>
         <h1>{data.name}</h1>   
-        <img src={GymSharkLogo} style={{width: '50px'}}/>    
+        <img src={GymSharkLogo} style={{width: '50px'}} alt="logo"/>    
       </div>
       <div>       
        <Button onClick={()=> setModalIsOpen(true)}>Instructions</Button>

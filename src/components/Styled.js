@@ -24,7 +24,7 @@ export const CardWrapper = styled.div`
     }
 `;
 
-export const SearchCard = styled.div`
+export const ExerciseCardStyle = styled.div`
    width: 300px;
    height: 100%auto;
    margin: 0 50px 40px;
