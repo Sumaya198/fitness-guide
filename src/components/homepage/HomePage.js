@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import GymSharkLogo from '../images/GymSharkLogo-01.png'
 import GymMaleImg from '../images/image1Male-01.webp';
 import { FaInstagram, FaTwitter } from "react-icons/fa";
-import { Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text, Icon } from './Home.style';
+import Footer from './Footer'
+import { Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text, Icon} from './Home.style';
 
 const HomePage = () => {
 
@@ -44,25 +45,22 @@ const HomePage = () => {
   }, [tl])
 
   return (
-
+    <>
     <Wrapper ref={el => app = el}>
       <Header ref={el => content = el}>
         <LogoImg src={GymSharkLogo} alt="gymshark logo" />
         <HeroContentInner>
           <h1>
             <div className="Main">GET <span style={{ color: '#009FE3' }}>FIT</span></div>
-            <div>With GymShark</div>
           </h1>
           <div ref={el => text = el}>
-            <Text ref={el => text = el}>
+            <Text style={{fontStyle: 'italic'}}ref={el => text = el}>
               Each new day is a new opportunity to improve yourself. Take It. And make the most of it!
-
-              Explore our wide range of exercises
              </Text>
-            <Icon>
-              <div className="font-icon"><a href="https://www.instagram.com/gymshark/"><FaInstagram /></a></div>
-              <div className="font-icon"><a href="https://twitter.com/Gymshark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><FaTwitter /></a></div>
-            </Icon>
+             <Text ref={el => text = el}>   
+              Explore our wide range of exercises. Enjoy!
+             </Text>
+            
             <Link to="/exercise"><Button>Get Started</Button></Link>
           </div>
         </HeroContentInner>
@@ -70,7 +68,14 @@ const HomePage = () => {
       <ImgSection ref={el => images = el}>
         <img src={GymMaleImg} alt="lifting-club-model" />
       </ImgSection>
+    
     </Wrapper>
+    <Footer/>
+  
+
+  
+    
+    </>
 
   )
 }

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Background from '../images/background-2-01.jpg'
+
 
 export const Wrapper = styled.div`
 
@@ -12,6 +14,9 @@ display: grid;
 
     gap: 1.5rem;
     font-weight: 800;
+
+    background-image:url(${Background});
+    background-size: cover;
 
     @media only screen and (max-width: 871px)
 {
@@ -71,26 +76,16 @@ export const HeroContentInner = styled.div`
  margin: 0 auto;
  color: #323232;
  justify-content: left;
- align-items: left;
-
- h1.Main{
-     font-weight: 600;
-     font-size: 42px;
-     margin-bottom: 24px;
-     font-family: 'Roboto', sans-serif;
- }
-
- 
+ align-items: left; 
 `;
+
 export const Text = styled.p`
-font-size: 20px;
+font-size: 23px;
 line-height: 27px;
 font-weight: 300;
 padding-right: 18px;
-margin-bottom: 6px;
+margin-bottom: 16px;
 font-family: 'Raleway', sans-serif;
-
-
 `;
 
 export const LogoImg = styled.img`
@@ -98,9 +93,7 @@ export const LogoImg = styled.img`
  margin-left: 70px;
 `;
 
-export const Footer = styled.div`
- background:#000;
-`;
+
 
 export const Icon = styled.div`
 font-size: 20px;
@@ -112,6 +105,72 @@ margin: 0 6px 0;
 .font-icon{
   margin: 0 20px 9px 20px;
 }
+`;
+
+export const FooterContainer = styled.div`
+  background:#111;
+  height: auto;
+  width: 100vw;
+  font-family: 'Raleway', sans-serif;
+  padding-top: 40px;
+  color: #fff;
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+  }
+
+  .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+  }
+
+  .socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .socials li{
+    margin: 0 10px;
+   
+  }
+
+  .socials a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    
+  }
+
+  .socials a:hover {
+    color: #009FE3;
+  }
+
+  .footer-bottom{
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid;
+  }
+  .border{
+    width: 50%;
+    align-items: center;
+    
+  }
+ 
 `;
 
 
