@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import img from './bggg-01.png'
+
 
 
 export const FlexGrid = styled.div`
@@ -54,7 +54,7 @@ export const SearchCard = styled.div`
 export const HomeGrid = styled.div`
      .background{
          position: relative;
-         background-image: url(${img});
+         
          background-repeat: no-repeat;
          min-height: 100vh;
          background-position: center;
@@ -90,13 +90,16 @@ export const HomePageContent = styled.div`
 `;
 
 export const Button = styled.button`
-padding: 10px 24px;
+padding: 10px 14px;
     background:#009FE3;
     color: #fff;
     border: none;
     border-radius: 10px;
 .genderButton{
     margin: 60px;
+}
+.instruction-btn{
+    margin-top:10px;
 }
 `;
 
@@ -223,4 +226,85 @@ export const HomeCardWrapper = styled.div`
        color: #fff;
        font-size: 18px;
    }
+`;
+
+//toggle button
+
+export const ToggleBtn = styled.div`
+
+.storybook {
+	width: 100%;
+	color: #708090;
+	height: 100%;
+	
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	flex-flow: column;
+	text-align: center;
+}
+
+#storybook {
+	display: block;
+}
+
+.ToggleSwitch {
+	position: relative;
+	width: 5rem;
+	height: 2.35rem;
+	display: inline-block;
+	
+	&.ToggleSwitch__rounded {
+		.Slider {
+			border-radius: 15rem;
+			background: #eceff1;
+			border: 1px solid #A0A0A0;
+			
+			&:before {
+				border-radius: 50%;
+			}
+		}
+	}
+	
+	.ToggleSwitch__wrapper {
+		position: relative;
+		width: 5rem;
+		height: 2.35rem;
+		
+		.Slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: .4s ease;
+			
+			&:before {
+				width: 2.45rem;
+				height: 2.45rem;
+				position: absolute;
+				background: #fff;
+				content: '';
+				margin: 0;
+				padding: 0;
+				top: 50%;
+				left: 0.10rem;
+				transform: translateY(-50%);
+				transition: .4s;
+				cursor: pointer;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			}
+			
+			&.isChecked {
+				background: #fff;
+				
+				&:before {
+					left: calc(100% - 0.10rem - 2.45rem);
+					background: #0099ff;
+				}
+			}
+		}
+	}
+}
 `;

@@ -1,90 +1,82 @@
-import React from 'react'
-import { Button } from '../Styled';
+import React, { useRef, useEffect } from 'react'
+import {TweenMax, TimelineLite, Power3} from 'gsap';
+import { Button} from '../Styled';
 import { Link } from 'react-router-dom';
-//import styled from 'styled-components';
-//import { Marginer } from '../Margina';
-import img from '../bggg-01.png'
-
-/*const TopContainer = styled.div`
-  max-width: 100%;
-  height: 100vh;
-  padding: 0;
-  background-image:url('https://dev.baileygp.com/image-tests/image-test-1200.jpg');
-  background-size: cover;
-  position: relative;
-  background-repeat: no-repeat;
-
-  @media (min-width: 768px){
-   min-width: 10vw;
-  }
-  
-  @media (min-width: 300px) { 
-    max-width: 800px;
-  }
-
- 
-`;
+import GymSharkLogo from '../GymSharkLogo-01.png'
+import GymMaleImg from '../image1Male-01.webp'
+import {Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text } from './Home.style';
 
 
-
-const BackgroundFilter = styled.div`
-   width: 100%;
-   height: 100%;
-   //background-color: rgba(55, 55, 55, 0.89);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-`;
-
-const Text = styled.h1`
-   font-size: 34px;
-   font-weight: 500;
-   line-height: 1.4;
-   color: #000;
-   margin: 40px;
-   text-align: center;
-`;*/
 
 const HomePage = () => {
-    return (      
-        <div>
-        <section className="about r-p" id="about" style={{ marginTop: '100px', height: '100vh'}}>
-<div className="container">
-  <div className="row">
-  <div className="col-lg-6 mt-5 mt-lg-0" style={{padding: '50px'}}>
-      <h2 style={{fontSize: '80px', fontFamily: 'Abril Fatface'}}>Get <span style={{color: '#009FE3'}}>fit</span></h2>
-      <div style={{ fontFamily: 'Raleway', fontWeight: '700'}}>
-      <p style={{fontSize: '18px', lineHeight: '32px' }}>Exercise not only changes your body. It changes your mind, your attitude and mood</p>
-      <p style={{fontSize: '18px', lineHeight: '32px'}}>Whether you are starting your fitness journey or a pro athlete we got you covered. Explore our wide range of workouts. <span style={{fontWeight: '800'}}>Start today! Enjoy!</span></p>
-      </div>
-      <div>
-      <Link to="/exercise"><Button type="button">Get Started</Button></Link>
-      </div>
-    </div>
-  <div className="col-lg-6 animated way-fade-up">
-      <img src={img} style={{width: '760px', height: '70vh', backgroundImage: 'cover', position: 'relative', right: '60px'}} className="profile-img" alt="profile"/>
-    </div>
+
+  let app = useRef(null);
+  let images = useRef(null);
+  let content = useRef(null);
+  let text = useRef(null);
+  let tl = new TimelineLite({ delay: .8})
+ 
+  useEffect(() => {
+    //image variables
+  const boyImage = images.firstElementChild;
+
+
+  const headlineFirst = content
+  
+  const contentP = text
+
+
+  TweenMax.from(content, .8, {opacity: 0, x:40, ease: Power3.easeOut})
+  
+
+   //parameters: target variable, duration and configurations you want to add i.e visibility
+   TweenMax.to(app, 0, {css: {visibility: 'visible'}})
+//image animantion
+   tl.from(boyImage, 1.2, {y: 1280, ease: Power3.easeOut}, 'Start')
+     .from(boyImage.firstElementChild, 2, {scale: 1.6, ease: Power3.easeOut}, .2)
+
+     tl.staggerFrom([headlineFirst.children ], 1, {
+      y: 44,
+      ease:Power3.easeOut,
+      delay: .8
+    }, .15, 'Start')
+    .from(contentP, 1, {y: 20, opacity: 0, ease: Power3.easeOut}, 1.4)
+
+  }, [tl])
     
-  </div>
-</div>
+  return(
 
-</section>
-    </div>
+    <Wrapper ref={el => app =el}>
+    <Header ref={el => content = el}>
+      <LogoImg src={GymSharkLogo} alt="gymshark logo"/>
+    <HeroContentInner>
+   <h1>
+               <div className="hero-content-line-inner">GET <span style={{color: '#009FE3'}}>FIT</span></div>
+               
+               <div className="hero-content-line-inner">With GymShark</div>  
+            
+           </h1>
+           <div ref={el => text = el}>
+           <Text ref={el => text = el}>
+             Each new day is a neropportunity to improve yourself. Take It. And make the most of it.
 
-    )
+             Explore our wide range of exercises
+             </Text>
+             
+           <Link to="/exercise"><Button>Get Started</Button></Link>
+           </div>
+         </HeroContentInner>
+           </Header>
+
+    <ImgSection ref={el => images = el}>
+        <img src={GymMaleImg}/>
+      </ImgSection>
+
+</Wrapper>
+ 
+  )
 }
+
+
 export default HomePage
 
-/*
- <HomeGrid>
-                   <div className="home-container">
-                <div className="background"></div>
-                </div>
-                   <div className="content">
-                    <div className="contentBx">
-                       <h1>Get Fit</h1>
-                       <p>Do something today that your future self will thank you for </p>
-                       <Link to="/exercise"><Button type="button">Get Started</Button></Link>
-                    </div>      
-                   </div>                 
-            </HomeGrid>   */

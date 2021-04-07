@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { StyledExerciseCard } from "./ExerciseCard.styled";
 import  Modal from "react-modal";
 import { CardWrapper, Button, ModalWrapper, ModalContent, FlexGrid } from "../Styled";
+import GymSharkLogo from '../GymSharkLogo-01.png'
 
 const ExerciseCard = ({ data , toggle}) => {
    
@@ -24,9 +25,10 @@ const ExerciseCard = ({ data , toggle}) => {
         />
       </div>
       <div>
-        <h1>{data.name}</h1>       
+        <h1>{data.name}</h1>   
+        <img src={GymSharkLogo} style={{width: '50px'}}/>    
       </div>
-      <div style={{marginTop: '35px'}}>       
+      <div>       
        <Button onClick={()=> setModalIsOpen(true)}>Instructions</Button>
         <Modal isOpen={modalIsOpen}
         ariaHideApp={false}>

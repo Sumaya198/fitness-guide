@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ExerciseCard from './exercise/ExerciseCard';
 import Api from './utils/API';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button } from './Styled';
+import { Button, ToggleBtn } from './Styled';
+import { FaMale, FaFemale } from "react-icons/fa";
 
 
 
@@ -36,20 +37,17 @@ function Main() {
     
 
     return (
-        
             <>
-            
-            
-            <div style={{marginLeft: '50px', marginBottom: '70px'}}>
-          
+            <div style={{marginLeft: '120px', display: 'flex', marginBottom: '70px'}}> 
             <ThemeContext.Provider value={toggleImage}>
-                <Button onClick={toggleTheme}>{toggleImage? "Switch to Male" : "Switch to Female"}</Button>
-            </ThemeContext.Provider>
-            
-            </div>
-            
-             
-            
+                <div >
+                <Button onClick={()=>setToggleImage(true)}><FaFemale/></Button>
+                </div>
+                <div style={{marginLeft: '40px'}}>
+                <Button onClick={()=>setToggleImage(false)}><FaMale/></Button>
+                </div>
+            </ThemeContext.Provider>    
+         </div>    
             {  exercise.map(fitness => {
 
                  
