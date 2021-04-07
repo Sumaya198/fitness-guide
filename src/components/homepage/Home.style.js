@@ -33,34 +33,9 @@ export const ImgSection = styled.div`
 grid-area: next;
 @media only screen and (max-width: 871px)
 {
-    img{
-        display: none;
-    } 
+  width: 300px;
 }
 `;
-
-
-///cards
-
-export const CardContainer = styled.div`
-display:grid;
-grid-template-columns: repeat(auto-fill, minmax(1fr 1fr));
-   
-align-items: stretch;
-    grid-gap: 1em;
-    @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr); 
-    }
-    
-`;
-
-export const InnerCard = styled.div`
-border: 1px solid #ccc;
-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
-text-align: center;
-
-`;
-
 
 export const HeroContentLine = styled.div`
   margin: 0;
@@ -98,20 +73,23 @@ export const HeroContentInner = styled.div`
  justify-content: left;
  align-items: left;
 
- h1{
+ h1.Main{
      font-weight: 600;
      font-size: 42px;
      margin-bottom: 24px;
+     font-family: 'Roboto', sans-serif;
  }
 
  
 `;
 export const Text = styled.p`
-font-size: 16px;
+font-size: 20px;
 line-height: 27px;
 font-weight: 300;
 padding-right: 18px;
 margin-bottom: 6px;
+font-family: 'Raleway', sans-serif;
+
 
 `;
 
@@ -125,12 +103,15 @@ export const Footer = styled.div`
 `;
 
 export const Icon = styled.div`
-font-size: 30px;
+font-size: 20px;
 color: blue;
 display: flex;
 padding:10px;
 line-height: 40px;
 margin: 0 6px 0;
+.font-icon{
+  margin: 0 20px 9px 20px;
+}
 `;
 
 

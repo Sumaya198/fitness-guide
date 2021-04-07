@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ExerciseCard from './exercise/ExerciseCard';
 import Api from './utils/API';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button, ToggleBtn } from './Styled';
+import { Button } from './Styled';
 import { FaMale, FaFemale } from "react-icons/fa";
-
-
-
 
 function Main() {
     const [ exercise, setExercise ] = useState([]);
@@ -24,18 +21,11 @@ function Main() {
         })
     }, [])
 
-    function toggleTheme(){
-        setToggleImage(prevImage => !prevImage)
-    }
-
     const ThemeContext = React.createContext()
 
     if(isLoading){
         return <CircularProgress/>
     }
-   
-    
-
     return (
             <>
             <div style={{marginLeft: '120px', display: 'flex', marginBottom: '70px'}}> 
@@ -50,18 +40,12 @@ function Main() {
          </div>    
             {  exercise.map(fitness => {
 
-                 
-             
-                    
                     return(
                         <>
-                       
                             <ExerciseCard key={fitness} data={fitness} toggle={toggleImage}/>
                             </>
-                        
                     )
                 })
-            
             }    
         </>
 

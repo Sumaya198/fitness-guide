@@ -7,8 +7,6 @@ import GymMaleImg from '../images/image1Male-01.webp';
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { Wrapper, Header, LogoImg, ImgSection, HeroContentInner, Text, Icon } from './Home.style';
 
-
-
 const HomePage = () => {
 
   let app = useRef(null);
@@ -19,6 +17,7 @@ const HomePage = () => {
 
   useEffect(() => {
     //image variables
+    let tl = new TimelineLite({ delay: .8 })
     const boyImage = images.firstElementChild;
 
 
@@ -51,18 +50,18 @@ const HomePage = () => {
         <LogoImg src={GymSharkLogo} alt="gymshark logo" />
         <HeroContentInner>
           <h1>
-            <div>GET <span style={{ color: '#009FE3' }}>FIT</span></div>
+            <div className="Main">GET <span style={{ color: '#009FE3' }}>FIT</span></div>
             <div>With GymShark</div>
           </h1>
           <div ref={el => text = el}>
             <Text ref={el => text = el}>
-              Each new day is a new opportunity to improve yourself. Take It. And make the most of it.
+              Each new day is a new opportunity to improve yourself. Take It. And make the most of it!
 
               Explore our wide range of exercises
              </Text>
             <Icon>
-              <div><a href="https://www.instagram.com/gymshark/"><FaInstagram /></a></div>
-              <div><a href="https://twitter.com/Gymshark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><FaTwitter /></a></div>
+              <div className="font-icon"><a href="https://www.instagram.com/gymshark/"><FaInstagram /></a></div>
+              <div className="font-icon"><a href="https://twitter.com/Gymshark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><FaTwitter /></a></div>
             </Icon>
             <Link to="/exercise"><Button>Get Started</Button></Link>
           </div>
@@ -71,7 +70,6 @@ const HomePage = () => {
       <ImgSection ref={el => images = el}>
         <img src={GymMaleImg} alt="lifting-club-model" />
       </ImgSection>
-
     </Wrapper>
 
   )
